@@ -285,8 +285,35 @@ Drama_Dicionario = {
 32 :Drama("Esperando Godot", 1952, "Samuel Beckett", "Grove Press")
 }
 
+generos = {
+        1: ("Romance", Romance_Dicionario),
+        2: ("Poesia", Poesia_Dicionario),
+        3: ("Conto", Conto_Dicionario),
+        4: ("Crônica", Cronica_Dicionario),
+        5: ("Drama", Drama_Dicionario)
+    }
+
 #-----------------------------------------------------------------------------------------------------------#
 # livros_drama livros_cronica livros_conto livros_poesia livros_romance
 
 livros = {**Romance_Dicionario, **Poesia_Dicionario, **Conto_Dicionario, **Cronica_Dicionario, **Drama_Dicionario}
 
+def listar_generos():
+
+    print("Escolha o gênero:")
+    for num, (nome, _) in generos.items():
+        print(f"{num} - {nome}")
+    try:
+        escolha = int(input("Digite o número do gênero desejado: "))
+        if escolha in generos:
+            nome_genero, dicionario = generos[escolha]
+            print(f"\nLivros do gênero {nome_genero}:")
+            for livro in dicionario.values():
+                if hasattr(livro, f"mostrarinfo_{nome_genero.lower()}"):
+                    print(getattr(livro, f"mostrarinfo_{nome_genero.lower()}")())
+                else:
+                    print(livro.getNome())
+        else:
+            print("Opção inválida.")
+    except ValueError:
+        print("Entrada inválida.")

@@ -144,3 +144,60 @@ def remover_livro():
         print("Livro removido com sucesso.")
     else:
         print("ID do livro não encontrado.")
+
+#-----------------------------------------------------------------------------------------------------------#
+
+def listar_autores_e_livros():
+    # Coletar todos os autores únicos
+    autores = set()
+    for livro in livros.values():
+        autores.add(livro.getAutor())
+    autores = sorted(list(autores))
+
+    # Exibir autores numerados
+    print("Autores disponíveis:")
+    for idx, autor in enumerate(autores, 1):
+        print(f"{idx}. {autor}")
+
+    # Solicitar escolha do usuário
+    try:
+        escolha = int(input("Escolha o número do autor: "))
+        if 1 <= escolha <= len(autores):
+            autor_escolhido = autores[escolha - 1]
+            print(f"\nLivros de {autor_escolhido}:")
+            for livro in livros.values():
+                if livro.getAutor() == autor_escolhido:
+                    # Tenta chamar o método de descrição correto
+                    for metodo in ["mostrarinfo_romance", "mostrarinfo_poesia", "mostrarinfo_conto", "mostrarinfo_cronica", "mostrarinfo_drama"]:
+                        if hasattr(livro, metodo):
+                            print(getattr(livro, metodo)())
+                            break
+        else:
+            print("Opção inválida.")
+    except ValueError:
+        print("Entrada inválida.")
+
+# Exemplo de uso:
+# listar_autores_e_livros()
+
+#-----------------------------------------------------------------------------------------------------------#
+
+def listar_generos():
+
+    print("Escolha o gênero:")
+    for num, (nome, _) in generos.items():
+        print(f"{num} - {nome}")
+    try:
+        escolha = int(input("Digite o número do gênero desejado: "))
+        if escolha in generos:
+            nome_genero, dicionario = generos[escolha]
+            print(f"\nLivros do gênero {nome_genero}:")
+            for livro in dicionario.values():
+                if hasattr(livro, f"mostrarinfo_{nome_genero.lower()}"):
+                    print(getattr(livro, f"mostrarinfo_{nome_genero.lower()}")())
+                else:
+                    print(livro.getNome())
+        else:
+            print("Opção inválida.")
+    except ValueError:
+        print("Entrada inválida.")
