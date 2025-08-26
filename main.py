@@ -1,7 +1,9 @@
 # importarndo todas as funções e classes para facilitar o uso
 from functions import *
 from classes import *
-livros = {}
+
+
+
 
 # tela inicial do sistema
 os.system("cls")
@@ -19,4 +21,5 @@ while True:
     print("BIBLIOTECA SENAI".center(50))
     print("SELECIONE O QUE DESEJA HOJE".center(50))
     print(50 * "-")
+    
 

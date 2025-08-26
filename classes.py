@@ -1,5 +1,12 @@
 # construtor da classe
 
+livros_poesia = []
+livros_romance = []
+livros_conto = []
+livros_cronica = []
+livros_drama = []
+# romance poesia conto cronica drama
+
 class Romance:
 
     def __init__(self, nome, ano, autor, editora):
@@ -233,43 +240,43 @@ class Drama:
 #-----------------------------------------------------------------------------------------------------------#
 
 # Adicionando livros as classes
+# romance poesia conto cronica drama
 
-livros_romance = Romance(nome="Dom Casmurro", ano=1899, autor="Machado de Assis", editora="Saraiva")
-livros_romance= Romance(nome="É assim que acaba", ano=2018, autor="Colleen Hoover", editora="Galera")
-livros_romance = Romance(nome="A culpa é das estrelas", ano=2012, autor="John Green", editora="Intrínseca")
-livros_romance = Romance(nome="Água Viva", ano=1973, autor="Clarice Lispector", editora="Rocco")
-livros_romance = Romance(nome="O Morro dos Ventos Uivantes", ano=1847, autor="Emily Brontë", editora="Penguin Classics")
+livros_romance.append(Romance("Dom Casmurro", 1899, "Machado de Assis", "Saraiva"))
+livros_romance.append(Romance("É assim que acaba", 2018, "Colleen Hoover", "Galera"))
+livros_romance.append(Romance("A culpa é das estrelas", 2012, "John Green", "Intrínseca"))
+livros_romance.append(Romance("Água Viva", 1973, "Clarice Lispector", "Rocco"))
+livros_romance.append(Romance("O Morro dos Ventos Uivantes", 1847, "Emily Brontë", "Penguin Classics"))
 
-livros_poesia = Poesia(nome="Livro de Mágoas", ano=1851, autor="Álvares de Azevedo", editora="Lello & Irmão")
-livros_poesia = Poesia(nome="Versos Íntimos", ano=1852, autor="Augusto dos Anjos", editora="José Olympio")
-livros_poesia = Poesia(nome="Antologia Poética", ano=1944, autor="Carlos Drummond de Andrade", editora="Companhia das Letras")
-livros_poesia = Poesia(nome="Poesia Completa", ano=1954, autor="Cecília Meireles", editora="Nova Fronteira")
-livros_poesia = Poesia(nome="A Rosa do Povo", ano=1945, autor="Carlos Drummond de Andrade", editora="Companhia das Letras")
-livros_poesia = Poesia(nome="O Guardador de Rebanhos", ano=1913, autor="Fernando Pessoa", editora="Penguin Classics")
-livros_poesia = Poesia(nome="Poemas Escolhidos", ano=1959, autor="Manuel Bandeira", editora="Companhia das Letras")
+livros_poesia.append(Poesia("Livro de Mágoas", 1851, "Álvares de Azevedo", "Lello & Irmão"))
+livros_poesia.append(Poesia("Versos Íntimos", 1852, "Augusto dos Anjos", "José Olympio"))
+livros_poesia.append(Poesia("Antologia Poética", 1944, "Carlos Drummond de Andrade", "Companhia das Letras"))
+livros_poesia.append(Poesia("Poesia Completa", 1954, "Cecília Meireles", "Nova Fronteira"))
+livros_poesia.append(Poesia("A Rosa do Povo", 1945, "Carlos Drummond de Andrade", "Companhia das Letras"))
+livros_poesia.append(Poesia("O Guardador de Rebanhos", 1913, "Fernando Pessoa", "Penguin Classics"))
+livros_poesia.append(Poesia("Poemas Escolhidos", 1959, "Manuel Bandeira", "Companhia das Letras"))
 
-livros_conto = Conto(nome="O Alienista", ano=1882, autor="Machado de Assis", editora="Saraiva")
-livros_conto = Conto(nome="Vidas Secas", ano=1938, autor="Graciliano Ramos", editora="José Olympio")
-livros_conto = Conto(nome="Felicidade Clandestina", ano=1971, autor="Clarice Lispector", editora="Rocco")
-livros_conto = Conto(nome="O Homem Nu", ano=1925, autor="Fernando Sabino", editora="Record")
-livros_conto = Conto(nome="A Cartomante", ano=1884, autor="Machado de Assis", editora="Saraiva")
-livros_conto = Conto(nome="O Primo Basílio", ano=1878, autor="José Maria de Eça de Queirós", editora="Penguin Classics")
-livros_conto = Conto(nome="A Metamorfose", ano=1915, autor="Franz Kafka", editora="Penguin Classics")
+livros_conto.append(Conto("O Alienista", 1882, "Machado de Assis", "Saraiva"))
+livros_conto.append(Conto("Vidas Secas", 1938, "Graciliano Ramos", "José Olympio"))
+livros_conto.append(Conto("Felicidade Clandestina", 1971, "Clarice Lispector", "Rocco"))
+livros_conto.append(Conto("O Homem Nu", 1925, "Fernando Sabino", "Record"))
+livros_conto.append(Conto("A Cartomante", 1884, "Machado de Assis", "Saraiva"))
+livros_conto.append(Conto("O Primo Basílio", 1878, "José Maria de Eça de Queirós", "Penguin Classics"))
+livros_conto.append(Conto("A Metamorfose", 1915, "Franz Kafka", "Penguin Classics"))
 
+livros_cronica.append(Cronica("Crônicas de Nárnia", 1950, "C.S. Lewis", "HarperCollins"))
+livros_cronica.append(Cronica("O Pequeno Príncipe", 1943, "Antoine de Saint-Exupéry", "Reynal & Hitchcock"))
+livros_cronica.append(Cronica("As Crônicas de Gelo e Fogo", 1996, "George R.R. Martin", "Bantam Books"))
+livros_cronica.append(Cronica("O Senhor dos Anéis", 1954, "J.R.R. Tolkien", "Allen & Unwin"))
+livros_cronica.append(Cronica("Harry Potter e a Pedra Filosofal", 1997, "J.K. Rowling", "Bloomsbury"))
+livros_cronica.append(Cronica("Percy Jackson e os Olimpianos", 2005, "Rick Riordan", "Disney-Hyperion"))
+livros_cronica.append(Cronica("As Aventuras de Sherlock Holmes", 1892, "Arthur Conan Doyle", "Penguin Classics"))
 
-livros_cronica = Cronica(nome="Crônicas de um Diário", ano=1998, autor="Luis Fernando Veríssimo", editora="Companhia das Letras")
-livros_cronica = Cronica(nome="O Mundo é um Moinho", ano=2000, autor="Carlos Drummond de Andrade", editora="Companhia das Letras")
-livros_cronica = Cronica(nome="A Vida como Ela É...", ano=1964, autor="Nelson Rodrigues", editora="Nova Fronteira")
-livros_cronica = Cronica(nome="O Canto da Sereia", ano=2002, autor="Chico Buarque", editora="Companhia das Letras")
-livros_cronica = Cronica(nome="Feliz Ano Velho", ano=1975, autor="Marcelo Rubens Paiva", editora="Globo")
-livros_cronica = Cronica(nome="O Velho e o Mar", ano=1952, autor="Ernest Hemingway", editora="Scribner")
-livros_cronica = Cronica(nome="A Hora da Estrela", ano=1977, autor="Clarice Lispector", editora="Rocco")
-
-livros_drama = Drama(nome="Hamlet", ano=1603, autor="William Shakespeare", editora="Penguin Classics")
-livros_drama = Drama(nome="Romeu e Julieta", ano=1597, autor="William Shakespeare", editora="Penguin Classics")
-livros_drama = Drama(nome="Macbeth", ano=1606, autor="William Shakespeare", editora="Penguin Classics")
-livros_drama = Drama(nome="A Casa de Bernarda Alba", ano=1936, autor="Federico García Lorca", editora="Penguin Classics")
-livros_drama = Drama(nome="O Auto da Compadecida", ano=1955, autor="Ariano Suassuna", editora="Record")
-livros_drama = Drama(nome="Esperando Godot", ano=1952, autor="Samuel Beckett", editora="Grove Press")
+livros_drama.append(Drama("Hamlet", 1603, "William Shakespeare", "Penguin Classics"))
+livros_drama.append(Drama("Romeu e Julieta", 1597, "William Shakespeare", "Penguin Classics"))
+livros_drama.append(Drama("Macbeth", 1606, "William Shakespeare", "Penguin Classics"))
+livros_drama.append(Drama("A Casa de Bernarda Alba", 1936, "Federico García Lorca", "Penguin Classics"))
+livros_drama.append(Drama("O Auto da Compadecida", 1955, "Ariano Suassuna", "Record"))
+livros_drama.append(Drama("Esperando Godot", 1952, "Samuel Beckett", "Grove Press"))
 #-----------------------------------------------------------------------------------------------------------#
-    
+# livros_drama livros_cronica livros_conto livros_poesia livros_romance
