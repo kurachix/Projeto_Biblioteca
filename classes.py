@@ -1,10 +1,5 @@
 # construtor da classe
-
-livros_poesia = []
-livros_romance = []
-livros_conto = []
-livros_cronica = []
-livros_drama = []
+livros_emprestados = {}
 # romance poesia conto cronica drama
 
 class Romance:
@@ -242,41 +237,56 @@ class Drama:
 # Adicionando livros as classes
 # romance poesia conto cronica drama
 
-livros_romance.append(Romance("Dom Casmurro", 1899, "Machado de Assis", "Saraiva"))
-livros_romance.append(Romance("É assim que acaba", 2018, "Colleen Hoover", "Galera"))
-livros_romance.append(Romance("A culpa é das estrelas", 2012, "John Green", "Intrínseca"))
-livros_romance.append(Romance("Água Viva", 1973, "Clarice Lispector", "Rocco"))
-livros_romance.append(Romance("O Morro dos Ventos Uivantes", 1847, "Emily Brontë", "Penguin Classics"))
+Romance_Dicionario = {
+1 :Romance("Dom Casmurro", 1899, "Machado de Assis", "Saraiva"),
+2 :Romance("É assim que acaba", 2018, "Colleen Hoover", "Galera"),
+3 :Romance("A culpa é das estrelas", 2012, "John Green", "Intrínseca"),
+4: Romance("Água Viva", 1973, "Clarice Lispector", "Rocco"),
+5: Romance("O Morro dos Ventos Uivantes", 1847, "Emily Brontë", "Penguin Classics")
+}
 
-livros_poesia.append(Poesia("Livro de Mágoas", 1851, "Álvares de Azevedo", "Lello & Irmão"))
-livros_poesia.append(Poesia("Versos Íntimos", 1852, "Augusto dos Anjos", "José Olympio"))
-livros_poesia.append(Poesia("Antologia Poética", 1944, "Carlos Drummond de Andrade", "Companhia das Letras"))
-livros_poesia.append(Poesia("Poesia Completa", 1954, "Cecília Meireles", "Nova Fronteira"))
-livros_poesia.append(Poesia("A Rosa do Povo", 1945, "Carlos Drummond de Andrade", "Companhia das Letras"))
-livros_poesia.append(Poesia("O Guardador de Rebanhos", 1913, "Fernando Pessoa", "Penguin Classics"))
-livros_poesia.append(Poesia("Poemas Escolhidos", 1959, "Manuel Bandeira", "Companhia das Letras"))
+Poesia_Dicionario = {
+6 :Poesia("Livro de Mágoas", 1851, "Álvares de Azevedo", "Lello & Irmão"),
+7 :Poesia("Versos Íntimos", 1852, "Augusto dos Anjos", "José Olympio"),
+8 :Poesia("Antologia Poética", 1944, "Carlos Drummond de Andrade", "Companhia das Letras"),
+9 :Poesia("Poesia Completa", 1954, "Cecília Meireles", "Nova Fronteira"),
+10 :Poesia("A Rosa do Povo", 1945, "Carlos Drummond de Andrade", "Companhia das Letras"),
+11: Poesia("O Guardador de Rebanhos", 1913, "Fernando Pessoa", "Penguin Classics"),
+12: Poesia("Poemas Escolhidos", 1959, "Manuel Bandeira", "Companhia das Letras")
+}
 
-livros_conto.append(Conto("O Alienista", 1882, "Machado de Assis", "Saraiva"))
-livros_conto.append(Conto("Vidas Secas", 1938, "Graciliano Ramos", "José Olympio"))
-livros_conto.append(Conto("Felicidade Clandestina", 1971, "Clarice Lispector", "Rocco"))
-livros_conto.append(Conto("O Homem Nu", 1925, "Fernando Sabino", "Record"))
-livros_conto.append(Conto("A Cartomante", 1884, "Machado de Assis", "Saraiva"))
-livros_conto.append(Conto("O Primo Basílio", 1878, "José Maria de Eça de Queirós", "Penguin Classics"))
-livros_conto.append(Conto("A Metamorfose", 1915, "Franz Kafka", "Penguin Classics"))
+Conto_Dicionario = {
+13 :Conto("O Alienista", 1882, "Machado de Assis", "Saraiva"),
+14 :Conto("Vidas Secas", 1938, "Graciliano Ramos", "José Olympio"),
+15 :Conto("Felicidade Clandestina", 1971, "Clarice Lispector", "Rocco"),
+16 :Conto("O Homem Nu", 1925, "Fernando Sabino", "Record"),
+17 :Conto("A Cartomante", 1884, "Machado de Assis", "Saraiva"),
+18 :Conto("O Primo Basílio", 1878, "José Maria de Eça de Queirós", "Penguin Classics"),
+19 :Conto("A Metamorfose", 1915, "Franz Kafka", "Penguin Classics")
+}
 
-livros_cronica.append(Cronica("Crônicas de Nárnia", 1950, "C.S. Lewis", "HarperCollins"))
-livros_cronica.append(Cronica("O Pequeno Príncipe", 1943, "Antoine de Saint-Exupéry", "Reynal & Hitchcock"))
-livros_cronica.append(Cronica("As Crônicas de Gelo e Fogo", 1996, "George R.R. Martin", "Bantam Books"))
-livros_cronica.append(Cronica("O Senhor dos Anéis", 1954, "J.R.R. Tolkien", "Allen & Unwin"))
-livros_cronica.append(Cronica("Harry Potter e a Pedra Filosofal", 1997, "J.K. Rowling", "Bloomsbury"))
-livros_cronica.append(Cronica("Percy Jackson e os Olimpianos", 2005, "Rick Riordan", "Disney-Hyperion"))
-livros_cronica.append(Cronica("As Aventuras de Sherlock Holmes", 1892, "Arthur Conan Doyle", "Penguin Classics"))
 
-livros_drama.append(Drama("Hamlet", 1603, "William Shakespeare", "Penguin Classics"))
-livros_drama.append(Drama("Romeu e Julieta", 1597, "William Shakespeare", "Penguin Classics"))
-livros_drama.append(Drama("Macbeth", 1606, "William Shakespeare", "Penguin Classics"))
-livros_drama.append(Drama("A Casa de Bernarda Alba", 1936, "Federico García Lorca", "Penguin Classics"))
-livros_drama.append(Drama("O Auto da Compadecida", 1955, "Ariano Suassuna", "Record"))
-livros_drama.append(Drama("Esperando Godot", 1952, "Samuel Beckett", "Grove Press"))
+Cronica_Dicionario = {
+20 :Cronica("Crônicas de Nárnia", 1950, "C.S. Lewis", "HarperCollins"),
+21 :Cronica("O Pequeno Príncipe", 1943, "Antoine de Saint-Exupéry", "Reynal & Hitchcock"),
+22 :Cronica("As Crônicas de Gelo e Fogo", 1996, "George R.R. Martin", "Bantam Books"),
+23 :Cronica("O Senhor dos Anéis", 1954, "J.R.R. Tolkien", "Allen & Unwin"),
+24 :Cronica("Harry Potter e a Pedra Filosofal", 1997, "J.K. Rowling", "Bloomsbury"),
+25 :Cronica("Percy Jackson e os Olimpianos", 2005, "Rick Riordan", "Disney-Hyperion"),
+26 :Cronica("As Aventuras de Sherlock Holmes", 1892, "Arthur Conan Doyle", "Penguin Classics")
+}
+
+Drama_Dicionario = {
+27 :Drama("Hamlet", 1603, "William Shakespeare", "Penguin Classics"),
+28 :Drama("Romeu e Julieta", 1597, "William Shakespeare", "Penguin Classics"),
+29 :Drama("Macbeth", 1606, "William Shakespeare", "Penguin Classics"),
+30 :Drama("A Casa de Bernarda Alba", 1936, "Federico García Lorca", "Penguin Classics"),
+31 :Drama("O Auto da Compadecida", 1955, "Ariano Suassuna", "Record"),
+32 :Drama("Esperando Godot", 1952, "Samuel Beckett", "Grove Press")
+}
+
 #-----------------------------------------------------------------------------------------------------------#
 # livros_drama livros_cronica livros_conto livros_poesia livros_romance
+
+livros = {**Romance_Dicionario, **Poesia_Dicionario, **Conto_Dicionario, **Cronica_Dicionario, **Drama_Dicionario}
+

@@ -3,244 +3,144 @@ import time
 import cv2
 from classes import *
 
-livros = {}
+
 # importando as bibliotecas necessárias para o funcionamento do sistema
 # romance poesia conto cronica drama
+#-----------------------------------------------------------------------------------------------------------#
 
-def registro(livros):
-    while True:
+def adicionar_livro():
+    # Exibe as opções de categoria para o usuário
+    print("Escolha a categoria do livro:")
+    print("1 - Romance")
+    print("2 - Poesia")
+    print("3 - Conto")
+    print("4 - Cronica")
+    print("5 - Drama")
+    categoria = input("Digite o número da categoria: ")
 
-        os.system("cls")
+    # Solicita os dados do novo livro
+    nome = input("Nome do livro: ")
+    ano = int(input("Ano de publicação: "))
+    autor = input("Autor: ")
+    editora = input("Editora: ")
 
-        print("Área de acesso restrito!\nRealize o seu login de admin!!".center(50))
+    # Adiciona o livro na categoria escolhida e atualiza o dicionário geral de livros
+    if categoria == "1":
+        novo_id = max(Romance_Dicionario.keys(), default=0) + 1
+        # Cria o novo livro e adiciona ao dicionário da classe Romance e ao dicionário geral
+        novo_livro = Romance(nome, ano, autor, editora)
+        Romance_Dicionario[novo_id] = novo_livro
+        livros[novo_id] = novo_livro
+        print(f"Livro adicionado à classe Romance! ID: {novo_id}")
+    elif categoria == "2":
+    # Cria o novo livro e adiciona ao dicionário da classe Poesia e ao dicionário geral
+        novo_id = max(Poesia_Dicionario.keys(), default=0) + 1
+        novo_livro = Poesia(nome, ano, autor, editora)
+        Poesia_Dicionario[novo_id] = novo_livro
+        livros[novo_id] = novo_livro
+        print(f"Livro adicionado à classe Poesia! ID: {novo_id}")
+    elif categoria == "3":
+        # Cria o novo livro e adiciona ao dicionário da classe Conto e ao dicionário geral
+        novo_id = max(Conto_Dicionario.keys(), default=0) + 1
+        novo_livro = Conto(nome, ano, autor, editora)
+        Conto_Dicionario[novo_id] = novo_livro
+        livros[novo_id] = novo_livro
+        print(f"Livro adicionado à classe Conto! ID: {novo_id}")
+    elif categoria == "4":
+        # Cria o novo livro e adiciona ao dicionário da classe Cronica e ao dicionário geral
+        novo_id = max(Cronica_Dicionario.keys(), default=0) + 1
+        novo_livro = Cronica(nome, ano, autor, editora)
+        Cronica_Dicionario[novo_id] = novo_livro
+        livros[novo_id] = novo_livro
+        print(f"Livro adicionado à classe Cronica! ID: {novo_id}")
+    elif categoria == "5":
+        # Cria o novo livro e adiciona ao dicionário da classe Drama e ao dicionário geral
+        novo_id = max(Drama_Dicionario.keys(), default=0) + 1
+        novo_livro = Drama(nome, ano, autor, editora)
+        Drama_Dicionario[novo_id] = novo_livro
+        livros[novo_id] = novo_livro
+        print(f"Livro adicionado à classe Drama! ID: {novo_id}")
+    else:
+        print("Categoria inválida.")
 
-        usuario = input("\nUsuário:\n--> ")
-        senha = input("Senha:\n--> ")
+#-----------------------------------------------------------------------------------------------------------#
 
-        if usuario == "admin" and senha == "admin123":
-            print("\nLogin realizado com sucesso!")
-            time.sleep(2)
-            
-        os.system("cls")
-        print(50 * "-")
-        print("Cadastro de livros".center(50))
-        print(50 * '-')
+def listar_livros():
+    for id_livro, livro in livros.items():
+        if isinstance(livro, Romance):
+            tipo = "Romance"
+            nome = livro.getNome()
+            ano = livro.getAno()
+            autor = livro.getAutor()
+            editora = livro.getEditora()
+        elif isinstance(livro, Poesia):
+            tipo = "Poesia"
+            nome = livro.getNome()
+            ano = livro.getAno()
+            autor = livro.getAutor()
+            editora = livro.getEditora()
+        elif isinstance(livro, Conto):
+            tipo = "Conto"
+            nome = livro.getNome()
+            ano = livro.getAno()
+            autor = livro.getAutor()
+            editora = livro.getEditora()
+        elif isinstance(livro, Cronica):
+            tipo = "Cronica"
+            nome = livro.getNome()
+            ano = livro.getAno()
+            autor = livro.getAutor()
+            editora = livro.getEditora()
+        elif isinstance(livro, Drama):
+            tipo = "Drama"
+            nome = livro.getNome()
+            ano = livro.getAno()
+            autor = livro.getAutor()
+            editora = livro.getEditora()
+        else:
+            continue
+        print(f"{id_livro}: {tipo} - {nome} ({ano}) | Autor: {autor} | Editora: {editora}")
 
+#-----------------------------------------------------------------------------------------------------------#
 
-        print("\nComece escolhendo o tipo do livro que deseja cadastrar:")
-        print("1 - Romance")
-        print("2 - Poesia")
-        print("3 - Conto")
-        print("4 - Crônica")
-        print("5 - Drama")
-        print("6 - Voltar ao menu principal")
-       
-        tipo_livro = input("\nDigite o tipo do livro:")
-
-        if tipo_livro == "1":
-            os.system("cls")
-
-            nome = input("Nome do livro:\n-->")
-
-            os.system("cls")
-
-            ano = input("Ano de publicação:\n--> ")
-
-            os.system("cls")
-
-            autor = input("Autor do livro:\n-->")
-
-            os.system("cls")
-
-            editora = input("Editora do livro:\n--> ")
-
-            os.system("cls")
-
-            
-            livro = Romance(nome, ano, autor, editora)
-            livros_romance.append(livro)
-            livros[nome] = livro
-            print(f"\nLivro '{nome}' cadastrado com sucesso!")
-            time.sleep(2)
-
-        if tipo_livro == "2":
-            os.system("cls")
-
-            nome = input("Nome do livro:\n-->")
-
-            os.system("cls")
-
-            ano = input("Ano de publicação:\n--> ")
-
-            os.system("cls")
-
-            autor = input("Autor do livro:\n-->")
-
-            os.system("cls")
-
-            editora = input("Editora do livro:\n--> ")
-
-            os.system("cls")
-            
-            livro = Poesia(nome, ano, autor, editora)
-            livros_poesia.append(livro)
-            livros[nome] = livro
-            print(f"\nLivro '{nome}' cadastrado com sucesso!")
-            time.sleep(2)
-
-        if tipo_livro == "3":
-
-            os.system("cls")
-
-            nome = input("Nome do livro:\n-->")
-
-            os.system("cls")
-
-            ano = input("Ano de publicação:\n--> ")
-
-            os.system("cls")
-
-            autor = input("Autor do livro:\n-->")
-
-            os.system("cls")
-            editora = input("Editora do livro:\n--> ")
-
-            os.system("cls")
-
-            
-            livro = Conto(nome, ano, autor, editora)
-            livros_poesia.append(livro)
-            livros[nome] = livro
-            print(f"\nLivro '{nome}' cadastrado com sucesso!")
-            time.sleep(2)
-
-        if tipo_livro == "4":
-
-            os.system("cls")
-
-            nome = input("Nome do livro:\n-->")
-
-            os.system("cls")
-
-            ano = input("Ano de publicação:\n--> ")
-
-            os.system("cls")
-
-            autor = input("Autor do livro:\n-->")
-
-            os.system("cls")
-
-            editora = input("Editora do livro:\n--> ")
-
-            os.system("cls")
-            
-    
-            livro = Cronica(nome, ano, autor, editora)
-            livros_cronica.append(livro)
-            livros[nome] = livro
-            print(f"\nLivro '{nome}' cadastrado com sucesso!")
-            time.sleep(2)
-
-        if tipo_livro == "5":
-
-            os.system("cls")
-
-            nome = input("Nome do livro:\n-->")
-
-            os.system("cls")
-
-            ano = input("Ano de publicação:\n--> ")
-
-            os.system("cls")
-
-            autor = input("Autor do livro:\n-->")
-
-            os.system("cls")
-
-            editora = input("Editora do livro:\n--> ")
-
-            os.system("cls")
-            
-            livro = Drama(nome, ano, autor, editora)
-            livros_drama.append(livro)
-            livros[nome] = livro
-            print(f"\nLivro '{nome}' cadastrado com sucesso!")
-            time.sleep(2)
-
-        os.system("cls")
-        print("Deseja cadastrar outro livro?")
-        print("\n1 - Sim")
-        print("2 - Não, voltar ao menu principal")
-
-        voltar = input("\n--> ")
-
-        if voltar == "2":
-            break
-
-
-        return livros, tipo_livro
-        
-    
-    def remover_livro():
-        while True:
-            os.system("cls")
-            print("Remover Livro".center(50, "-"))
-            print("\nEscolha o tipo de livro para remover:")
-            print("1 - Romance")
-            print("2 - Poesia")
-            print("3 - Conto")
-            print("4 - Crônica")
-            print("5 - Drama")
-            print("6 - Voltar ao menu principal")
-            tipo = input("\nDigite o número do tipo do livro: ")
-    
-            if tipo == "6":
-                break
-    
-            if tipo == "1":
-                lista = livros_romance
-            elif tipo == "2":
-                lista = livros_poesia
-            elif tipo == "3":
-                lista = livros_conto
-            elif tipo == "4":
-                lista = livros_cronica
-            elif tipo == "5":
-                lista = livros_drama
+def remover_livro():
+    opcao = input("Deseja ver a lista de livros e seus IDs antes de remover? (s/n): ").strip().lower()
+    if opcao == 's':
+        for id_livro, livro in livros.items():
+            if isinstance(livro, Romance):
+                tipo = "Romance"
+            elif isinstance(livro, Poesia):
+                tipo = "Poesia"
+            elif isinstance(livro, Conto):
+                tipo = "Conto"
+            elif isinstance(livro, Cronica):
+                tipo = "Cronica"
+            elif isinstance(livro, Drama):
+                tipo = "Drama"
             else:
-                print("Tipo inválido!")
-                time.sleep(2)
-                continue
-    
-            if not lista:
-                print(f"\nNenhum livro cadastrado nesse tipo.")
-                time.sleep(2)
-                continue
-    
-            print(f"\nLivros cadastrados:")
-            for idx, livro in enumerate(lista, 1):
-                print(f"{idx} - {livro.nome}")
-    
-            idx_remover = input("\nDigite o número do livro para remover (ou 0 para cancelar): ")
-            if idx_remover == "0":
-                continue
-    
-            try:
-                idx_remover = int(idx_remover) - 1
-                if 0 <= idx_remover < len(lista):
-                    livro_removido = lista.pop(idx_remover)
-                    print(f"\nLivro '{livro_removido.nome}' removido com sucesso!")
-                else:
-                    print("Número inválido!")
-            except ValueError:
-                print("Entrada inválida! Por favor, digite um número.")
-                time.sleep(2)
-                continue
-
-
-
-
-
-
-        
-
+                tipo = "Desconhecido"
+            print(f"ID: {id_livro} | Tipo: {tipo} | Nome: {livro.getNome()}")
+    id_livro = int(input("Digite o ID do livro que deseja remover: "))
+    if id_livro in livros:
+        livro = livros[id_livro]
+        # Remover do dicionário principal
+        del livros[id_livro]
+        # Remover do dicionário da categoria e garantir remoção da classe
+        if isinstance(livro, Romance):
+            Romance_Dicionario.pop(id_livro, None)
+            del livro
+        elif isinstance(livro, Poesia):
+            Poesia_Dicionario.pop(id_livro, None)
+            del livro
+        elif isinstance(livro, Conto):
+            Conto_Dicionario.pop(id_livro, None)
+            del livro
+        elif isinstance(livro, Cronica):
+            Cronica_Dicionario.pop(id_livro, None)
+            del livro
+        elif isinstance(livro, Drama):
+            Drama_Dicionario.pop(id_livro, None)
+            del livro
+        print("Livro removido com sucesso.")
+    else:
+        print("ID do livro não encontrado.")
